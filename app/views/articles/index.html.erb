@@ -1,0 +1,31 @@
+<h1>Support Requests</h1>
+<%= link_to 'New article', new_article_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Message</th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.name %></td>
+
+      <td> <a href="mailto:<%= article.email %>?Subject=My%20Email" target="_top">
+<%= article.email %></a> </td>
+
+
+
+
+
+      <td><%= article.message %></td>
+
+    <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+
+    <td><%= link_to 'Destroy', article_path(article),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>

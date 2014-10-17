@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @article.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @article.email %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @article.message %>
+</p>
+
+<%= link_to 'Back', articles_path %>
+| <%= link_to 'Edit', edit_article_path(@article) %>
